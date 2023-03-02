@@ -1,6 +1,6 @@
 # m1g-note-app-js
 
-This template should help get you started developing with Vue 3 in Vite.
+[DEMO](https://vadymbaranov.github.io/m1g-note-app-js/)
 
 ## Recommended IDE Setup
 

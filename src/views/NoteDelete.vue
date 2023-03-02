@@ -32,27 +32,23 @@ export default {
 
 <template>
   <div className="modal is-active">
-    <div className="modal-background" />
+    <div className="modal-background"></div>
 
     <div class="modal-card">
-      <div class="dialog">
-        <h1 class="dialog__title">Are you shure?</h1>
+      <header class="modal-card-head">
+        <h1 class="modal-card-title title is-3 has-text-centered">Are you sure?</h1>
+      </header>
 
-        <div class="dialog__body">
-          <RouterLink to="/">
-            <button class="button is-danger is-outlined" @click="deleteNote()">
-              <span>Delete</span>
-              <span class="icon is-small">
-                <i class="fas fa-times"></i>
-              </span>
-            </button>
-          </RouterLink>
+      <section class="modal-card-body has-text-centered">
+        <p class="subtitle is-4">This will delete the note with all of its todos!</p>
+        <RouterLink to="/">
+          <button class="button is-danger is-outlined" @click="deleteNote()">
+            Delete
+          </button>
+        </RouterLink>
+      </section>
 
-          <p class="control" @click="this.$router.go(-1)">
-            <button class="button is-warning">Cancel</button>
-          </p>
-        </div>
-      </div>
+      <button class="button is-warning" @click="this.$router.go(-1)">Cancel</button>
     </div>
   </div>
 </template>

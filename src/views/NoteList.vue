@@ -23,7 +23,7 @@ export default {
     return {
       selectedNote,
       notes,
-      newNoteTitle: selectedNote?.title,
+      newNoteTitle: selectedNote.title,
       newTodoTitle: "",
       editingNote: false,
     };
@@ -68,30 +68,22 @@ export default {
 
 <template>
   <div className="modal is-active">
-    <div className="modal-background" />
+    <div className="modal-background"></div>
 
     <div className="modal-card">
       <header className="modal-card-head is-justify-content-space-between">
-        <button class="button is-success" @click="saveChanges()">
-          <span class="icon is-small">
-            <i class="fas fa-check"></i>
-          </span>
-          <span>Save</span>
+        <button class="button is-success is-outlined" @click="saveChanges()">
+          Save
         </button>
 
         <RouterLink :to="`/delete/:${selectedNote.id}`">
           <button class="button is-danger is-outlined">
-            <span>Delete</span>
-            <span class="icon is-small">
-              <i class="fas fa-times"></i>
-            </span>
+            Delete
           </button>
         </RouterLink>
 
         <RouterLink to="/">
-          <p class="control">
-            <button class="button">Cancel</button>
-          </p>
+          <button class="button is-outlined is-warning">Cancel</button>
         </RouterLink>
       </header>
 
@@ -108,13 +100,13 @@ export default {
         </form>
 
         <h1 v-else class="content is-large" @dblclick="editingNote = true">
-          {{ selectedNote?.title }}
+          {{ selectedNote.title }}
         </h1>
 
         <p class="noteapp__todo"><strong>Todo:</strong></p>
 
         <div class="noteapp__content">
-          <TodoList :todos="selectedNote?.todos" />
+          <TodoList :todos="selectedNote.todos" />
         </div>
       </div>
     </div>

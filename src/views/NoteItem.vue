@@ -70,17 +70,12 @@ export default {
 
 <template>
   <div className="modal is-active" data-cy="modal">
-    <div className="modal-background" />
+    <div className="modal-background"></div>
 
     <div className="modal-card">
       <header className="modal-card-head is-justify-content-space-between">
         <RouterLink to="/">
-          <button
-            class="button is-success"
-            @click="handleSubmit"
-          >
-            <button type="button" class="button is-success">Save</button>
-          </button>
+          <button type="button" class="button is-success" @click="handleSubmit">Save</button>
         </RouterLink>
 
         <RouterLink to="/">

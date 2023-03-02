@@ -60,24 +60,24 @@ export default {
 
               <div class="content">
                 <section
-                  class="box"
+                  class="box is-flex"
                   v-for="todo of todosPreview(note.todos)"
                   :key="todo.id"
                 >
-                  <div class="" :class="{ completed: todo.completed }">
-                    <label class="checkbox">
-                      <input type="checkbox" checked={todo.completed}/>
+                  <div class="is-flex is-align-items-center" :class="{completed: todo.completed}">
+                    <label class="checkbox mr-4">
+                      <input type="checkbox" :checked="todo.completed"/>
                     </label>
 
-                    <span class="subtitle is-5">{{ todo.title }}</span>
+                    <p class="subtitle is-5">{{ todo.title }}</p>
                   </div>
                 </section>
               </div>
+              <div v-if="note.todos.length > 3" class="columns is-centered is-size-1">...</div>
             </section>
           </div>
         </div>
       </div>
-      <div v-if="note.todos.length > 3" class="columns is-centered is-size-1">...</div>
     </div>
   </div>
 </template>

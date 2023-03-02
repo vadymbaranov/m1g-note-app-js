@@ -4,7 +4,7 @@ export default {
 
   data() {
     return {
-      title,
+      title: '',
     };
   },
 
@@ -46,23 +46,30 @@ export default {
     </header>
 
     <section
-      class="box"
-      v-for="(todo, index) of todos"
+      class="box is-flex is-justify-content-space-between"
+      v-for="todo of todos"
       :key="todo.id"
     >
-      <div v-if="todos.length" class="is-justify-content-space-between" :class="{ completed: todo.completed }">
-        <label class="checkbox">
+      <div v-if="todos.length" class="is-flex is-align-items-center" :class="{ completed: todo.completed }">
+        <label class="checkbox mr-4">
           <input
             type="checkbox"
-            v-model="todo.completed"
+            :checked="todo.completed"
           />
         </label>
         
         <span class="title is-5">{{ todo.title }}</span>
-        <button type="button" class="button" @click="deleteTodo(index)">
-          x
-        </button>
       </div>
+
+      <button type="button" class="button is-outlined todo-delete is-justify-content-right" @click="deleteTodo(index)">
+          x
+      </button>
     </section>
   </div>
 </template>
+
+<style scoped>
+.todo-delete {
+  border: none;
+}
+</style>
